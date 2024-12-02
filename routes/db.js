@@ -1,9 +1,10 @@
-const express =  require ("express");
+const express = require('express');
+const { addEmployees, deleteEmployee, getEmployees, updateEmployee } = require('../controllers/db');
 const router = express.Router();
-const {addUser, delelteEmp }  =  require('../controllers/db')
 
-router.post('/addUser' , addUser)
-router.delete()
+router.post('/addEmployee', addEmployees); 
+router.get('/getEmployees', getEmployees); 
+router.put('/updateEmployee/:id', updateEmployee); 
+router.delete('/deleteEmployee/:id', deleteEmployee); 
 
-module.exports =  router ;
-
+module.exports = router;
